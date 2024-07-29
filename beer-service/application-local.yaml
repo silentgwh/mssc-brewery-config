@@ -1,0 +1,40 @@
+server:
+  port: 8080
+spring:
+  profiles:
+    active:
+      - dev
+  jpa:
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: "update"
+    properties:
+        jdbc:
+          fetch_size: 10
+          batch_size: 10
+        order_inserts: true
+        order_updates: true
+  datasource:
+    url: "jdbc:postgresql://localhost:5433/postgres"
+    username: "postgres"
+    password: "pass"
+    hikari:
+      minimum-idle: 5
+      maximumPoolSize: 20
+      idle-timeout: 30000
+      pool-name: SpringBootJPAHikariCP
+      max-lifetime: 2000000
+      connectionTimeout: 30000
+  logging:
+    level:
+      by.silentgwh: debug
+
+
+
+
+
+
+
+
+
